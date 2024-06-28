@@ -11,7 +11,6 @@ Data Pengaduan
       Pengaduan
     </h2>
 
-
     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
       <div class="w-full overflow-x-auto">
         @if ($errors->any())
@@ -40,8 +39,8 @@ Data Pengaduan
               <td class="px-4 py-3">
                 <div class="flex items-center text-sm">
                   <!-- Avatar with inset shadow -->
-                  <div class="relative hidden mr-3  md:block">
-                    <img class=" h-32 w-35 " src="{{ Storage::url($item->image) }}" alt="" loading="lazy" />
+                  <div class="relative hidden mr-3 md:block">
+                    <img class="h-32 w-35" src="{{ Storage::url($item->image) }}" alt="" loading="lazy" />
                   </div>
                 </div>
               </td>
@@ -72,17 +71,14 @@ Data Pengaduan
                   {{ $item->status }}
                 </span>
               </td>
-
-
               @endif
 
               <td class="px-4 py-3">
                 <div class="flex items-center space-x-4 text-sm">
 
                   <a href="{{ route('pengaduans.show', $item->id)}} "
-                    class="flex items-center justify-between  text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                    class="flex items-center justify-between text-sm font-medium leading-5 text-green-600 rounded-lg dark:text-green-400 focus:outline-none focus:shadow-outline-gray"
                     aria-label="Detail">
-
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -95,7 +91,7 @@ Data Pengaduan
                     @method('delete')
                     <button
                       onclick="return confirm('Are you sure you want to delete this?')"
-                      class="flex items-center justify-between  text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                      class="flex items-center justify-between text-sm font-medium leading-5 text-red-600 rounded-lg dark:text-red-400 focus:outline-none focus:shadow-outline-gray"
                       aria-label="Delete">
                       <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd"

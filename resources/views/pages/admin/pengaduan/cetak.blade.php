@@ -10,7 +10,7 @@
     }
 
     hr.solid {
-    border-top: 2px solid #3B82F6;
+    border-top: 2px solid #d3d3d3;
     }
   </style>
 
@@ -20,7 +20,6 @@
   <div class="container">
     <div class="title text-center mb-5">
       <h2>Layanan Pengaduan Masyarakat Online</h2>
-      <h5><a href="https://www.pengkat.madfariz.my.id/" target="_blank">www.pengkat.madfariz.my.id</a></h5>
     </div>
     <hr class="solid">
 
