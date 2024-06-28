@@ -53,7 +53,7 @@
         </a>
       </li>
     </ul>
-    @if( Auth::user()->roles == 'ADMIN')
+    {{-- @if( Auth::user()->roles == 'ADMIN')
 
     <ul>
       <li class="relative px-6 py-3">
@@ -70,7 +70,7 @@
         </a>
       </li>
     </ul>
-    @endif
+    @endif --}}
     <ul>
       <li class="relative px-6 py-3">
         <span

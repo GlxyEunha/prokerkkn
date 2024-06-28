@@ -31,7 +31,7 @@ Route::prefix('admin')
         Route::resource('tanggapan', 'TanggapanController');
 
         Route::get('masyarakat', 'AdminController@masyarakat');
-        Route::resource('petugas', 'PetugasController');
+        // Route::resource('petugas', 'PetugasController');
 
         Route::get('laporan', 'AdminController@laporan');
         Route::get('laporan/cetak', 'AdminController@cetak');
