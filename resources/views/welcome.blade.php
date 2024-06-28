@@ -155,6 +155,67 @@
       color: #ffffff;
       font-size: 1.1rem;
     }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .header {
+        flex-wrap: wrap;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .how-steps {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .how-step {
+        max-width: none;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .hero-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      .how-it-works h2 {
+        font-size: 2rem;
+      }
+
+      .how-step h3 {
+        font-size: 1.2rem;
+      }
+
+      .how-step p {
+        font-size: 1rem;
+      }
+
+      .header-links {
+        gap: 10px;
+      }
+
+      .header-links a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
 
