@@ -1,3 +1,3 @@
-## PENGKAT - Pengaduan Masyarakat
+## Website Pengaduan Proker KKN Laily
 
-Ini adalah Source Code Website PENGKAT - Layanan Pengaduan Masyarakat Online yang dibuat menggunakan Framework Laravel 8 dan Tailwindcss.
+Website sini dibuat dengan penuh rasa suka dan cinta dari seorang programmer handal bernama laily.
