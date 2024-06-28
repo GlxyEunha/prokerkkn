@@ -3,7 +3,7 @@
         
         <x-slot name="logo">
             <a href="/">
-                <img class="w-20 h-20" src="{{ asset('img/logo.svg')}} " alt="Logo">
+                <img class="w-20 h-20" src="{{ asset('img/announce.ico')}} " alt="Logo">
             </a>
         </x-slot>
 
@@ -51,7 +51,7 @@
 
                 
 
-                <x-button class="ml-3  bg-blue-500 text-white font-bold rounded-md my-3 py-3 px-4 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:bg-blue-500 hover:scale-105 duration-300 ease-in-out">
+                <x-button class="ml-3  bg-green-500 text-white font-bold rounded-md my-3 py-3 px-4 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:bg-green-700 hover:scale-105 duration-300 ease-in-out">
                     {{ __('Login') }}
                 </x-button>
             </div>
