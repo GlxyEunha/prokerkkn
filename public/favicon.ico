@@ -1,0 +1,3 @@
+<head>
+    <link rel="icon" href="{{ asset('img/announce.ico') }}">
+</head>
