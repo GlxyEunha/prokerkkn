@@ -1,5 +1,5 @@
 <head>
-    <title>Register</title>
+    <title>Daftar</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/announce.ico') }}">
 </head>
 <x-guest-layout>

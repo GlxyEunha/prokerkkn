@@ -1,5 +1,5 @@
 <head>
-    <title>Login</title>
+    <title>Masuk</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/announce.ico') }}">
 </head>
 <x-guest-layout>
