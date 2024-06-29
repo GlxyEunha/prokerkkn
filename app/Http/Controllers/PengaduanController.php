@@ -102,6 +102,6 @@ class PengaduanController extends Controller
         $pengaduan->delete();
 
         Alert::success('Berhasil', 'Pengaduan telah di hapus');
-        return redirect('admin/pengaduans');
+        return redirect()->route('pengaduans.index');
     }
 }
