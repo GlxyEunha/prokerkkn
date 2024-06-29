@@ -1,3 +1,7 @@
+<head>
+    <title>Register</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/announce.ico') }}">
+</head>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
