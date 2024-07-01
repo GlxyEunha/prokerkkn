@@ -7,10 +7,9 @@
   <title>PENGKAT | Pengaduan Masyarakat</title>
   
   <style>
-    .thead{
-    background-color: #696969;
-    color: #ffffff;
-    
+    .thead {
+      background-color: #696969;
+      color: #ffffff;
     }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -34,15 +33,13 @@
       </thead>
       <tbody>
         @foreach($pengaduan as $item)
-          
         <tr>
-          <td>{{ $item->id }} </td>
+          <td>{{ $loop->iteration }}</td> 
           <td>{{ $item->user_nik }}</td>
           <td>{{ $item->name }}</td>
           <td>{{ $item->description }}</td>
           <td>{{ $item->created_at->format('l, d F Y') }}</td>
           <td>{{ $item->status }}</td>
-
         </tr>
         @endforeach
       </tbody>

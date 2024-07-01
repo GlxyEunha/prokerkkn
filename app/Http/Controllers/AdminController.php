@@ -41,24 +41,42 @@ class AdminController extends Controller
 
     public function laporan()
     {
-
-        $pengaduan = Pengaduan::orderBy('created_at', 'DESC')->get();
-
+        // Ambil data pengaduan dengan urutan berdasarkan tanggal dibuat (ASC)
+        $pengaduan = Pengaduan::orderBy('created_at', 'ASC')->get();
+    
+        // Inisialisasi counter
+        $counter = 1;
+    
+        // Mengubah data pengaduan untuk menambahkan nomor urut dari counter
+        foreach ($pengaduan as $item) {
+            $item->counter = $counter;
+            $counter++;
+        }
+    
         return view('pages.admin.laporan', [
             'pengaduan' => $pengaduan
         ]);
     }
-
+    
     public function cetak()
     {
-
-        $pengaduan = Pengaduan::orderBy('created_at', 'DESC')->get();
-
+        // Ambil data pengaduan dengan urutan berdasarkan tanggal dibuat (ASC)
+        $pengaduan = Pengaduan::orderBy('created_at', 'ASC')->get();
+    
+        // Inisialisasi counter
+        $counter = 1;
+    
+        // Load view PDF dengan data yang sudah dimodifikasi
         $pdf = PDF::loadview('pages.admin.pengaduan', [
-            'pengaduan' => $pengaduan
+            'pengaduan' => $pengaduan,
+            'counter' => $counter  // Sertakan counter untuk nomor urut dalam PDF
         ]);
+    
+        // Download PDF dengan nama file 'laporan.pdf'
         return $pdf->download('laporan.pdf');
-    }
+    }  
+
+    
 
     public function pdf($id)
     {

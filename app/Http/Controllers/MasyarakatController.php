@@ -74,16 +74,15 @@ class MasyarakatController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function lihat()
-    {
-
-
-        $user = Auth::user()->pengaduan()->orderBy('created_at', 'DESC')->get();
-
-        return view('pages.masyarakat.detail', [
-            'items' => $user
-        ]);
-    }
+     public function lihat()
+     {
+         $user = Auth::user()->pengaduan()->orderBy('created_at', 'ASC')->get();
+         
+         return view('pages.masyarakat.detail', [
+             'items' => $user
+         ]);
+     }
+     
 
     public function show($id)
     {

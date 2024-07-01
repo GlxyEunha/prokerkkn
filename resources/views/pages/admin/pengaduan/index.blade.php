@@ -27,6 +27,7 @@ Data Pengaduan
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Foto</th>
               <th class="px-4 py-3">Nama</th>
+              <th class="px-4 py-3">Keterangan</th>
               <th class="px-4 py-3">Tanggal</th>
               <th class="px-4 py-3">Status</th>
               <th class="px-4 py-3">Aksi</th>
@@ -46,7 +47,10 @@ Data Pengaduan
                 {{ $item->name }}
               </td>
               <td class="px-4 py-3 text-sm">
-                {{ $item->created_at->format('l, d F Y - H:i:s') }}
+                {{ $item->description }}
+              </td>
+              <td class="px-4 py-3 text-sm">
+                {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y - H:i:s') }}
               </td>
               <td class="px-4 py-3 text-xs">
                 <span class="px-2 py-1 font-semibold leading-tight {{ $item->status == 'Belum di Proses' ? 'text-red-700 bg-red-100' : ($item->status == 'Sedang di Proses' ? 'text-orange-700 bg-orange-100' : 'text-green-700 bg-green-100') }} rounded-md dark:text-red-100 dark:bg-red-700">
@@ -71,7 +75,7 @@ Data Pengaduan
             </tr>
             @empty
             <tr>
-              <td colspan="5" class="text-center text-gray-400">
+              <td colspan="6" class="text-center text-gray-400">
                 Data Kosong
               </td>
             </tr>

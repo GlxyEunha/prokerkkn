@@ -26,12 +26,16 @@ Data Pengaduan
           <thead>
             <tr class="text-xs font-semibold tracking-wide text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Foto</th>
+              <th class="px-4 py-3">Keterangan</th> <!-- Kolom baru untuk Keterangan -->
               <th class="px-4 py-3">Tanggal</th>
               <th class="px-4 py-3">Status</th>
               <th class="px-4 py-3">Aksi</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            @php
+            \Carbon\Carbon::setLocale('id');
+            @endphp
             @forelse ($items as $item)
             <tr class="text-gray-700 dark:text-gray-400">
               <td class="px-4 py-3 text-center">
@@ -43,7 +47,10 @@ Data Pengaduan
                 </div>
               </td>
               <td class="px-4 py-3 text-sm text-center">
-                {{ $item->created_at->format('l, d F Y - H:i:s') }}
+                {{ $item->description }} <!-- Menampilkan keterangan -->
+              </td>
+              <td class="px-4 py-3 text-sm text-center">
+                {{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y - H:i:s') }}
               </td>
               @if($item->status == 'Belum di Proses')
               <td class="px-4 py-3 text-xs text-center">
@@ -75,7 +82,7 @@ Data Pengaduan
             </tr>
             @empty
             <tr>
-              <td colspan="4" class="text-center text-gray-400">
+              <td colspan="5" class="text-center text-gray-400"> <!-- Ubah colspan dari 4 ke 5 -->
                 Data Kosong
               </td>
             </tr>

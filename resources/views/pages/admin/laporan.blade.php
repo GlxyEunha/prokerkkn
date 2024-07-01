@@ -36,9 +36,12 @@ Laporan
             </tr>
           </thead>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            @php
+              $counter = 1;
+            @endphp
             @forelse ($pengaduan as $item)
             <tr class="text-gray-700 dark:text-gray-400">
-              <td class="px-4 py-3 text-sm text-center">{{ $item->id }}</td>
+              <td class="px-4 py-3 text-sm text-center">{{ $counter }}</td>
               <td class="px-4 py-3 text-sm text-center">{{ $item->user_nik }}</td>
               <td class="px-4 py-3 text-sm text-center">{{ $item->name }}</td>
               <td class="px-4 py-3 text-sm text-center">{{ $item->description }}</td>
@@ -63,6 +66,9 @@ Laporan
               </td>
               @endif
             </tr>
+            @php
+              $counter++;
+            @endphp
             @empty
             <tr>
               <td colspan="6" class="text-center text-gray-400">
