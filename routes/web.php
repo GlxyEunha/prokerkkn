@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\MasyarakatController;
 
 
 /*
@@ -38,6 +39,7 @@ Route::prefix('admin')
         Route::get('pengaduan/cetak/{id}', 'AdminController@pdf');
 });
 
+Route::post('/admin/masyarakat/{id}/reset-password', [MasyarakatController::class, 'resetPassword']);
 
 // Masyarakat
 Route::prefix('user')

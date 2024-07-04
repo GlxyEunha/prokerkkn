@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 use File;
+use Illuminate\Support\Facades\DB;
 
 class MasyarakatController extends Controller
 {
@@ -130,5 +131,19 @@ class MasyarakatController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function resetPassword($id)
+    {
+        $data = DB::table('users')->where('roles', '=', 'USER')->get();
+
+        $masyarakat = User::find($id);
+        $masyarakat->password = bcrypt('12345');
+        $masyarakat->save();
+
+        Alert::success('Berhasil', 'Berhasil mereset password');
+        return view('pages.admin.masyarakat', [
+            'data' => $data
+        ]);
     }
 }
