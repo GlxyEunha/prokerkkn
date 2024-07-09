@@ -48,23 +48,33 @@ class MasyarakatController extends Controller
     {
         $request->validate([
             'description' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
         ]);
-
+    
         $nik = Auth::user()->nik;
         $id = Auth::user()->id;
         $name = Auth::user()->name;
-
+    
         $data = $request->all();
         $data['user_nik'] = $nik;
         $data['user_id'] = $id;
         $data['name'] = $name;
-        $data['image'] = $request->file('image')->store('assets/laporan', 'public');
-
-
-
+    
+        // Mendapatkan file gambar dari request
+        $image = $request->file('image');
+        
+        // Membuat nama unik untuk file
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        
+        // Menyimpan file ke folder public/assets/laporan
+        $image->move(public_path('laporan'), $imageName);
+    
+        // Menyimpan nama file dalam database
+        $data['image'] = $imageName;
+    
         Alert::success('Berhasil', 'Pengaduan terkirim');
         Pengaduan::create($data);
+    
         return redirect('user/pengaduan');
     }
 

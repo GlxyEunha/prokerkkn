@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\MasyarakatController;
+use App\Http\Controllers\GetImageController;
 
 
 /*
@@ -49,6 +50,8 @@ Route::prefix('user')
                 Route::resource('pengaduan', 'MasyarakatController');
                 Route::get('pengaduan', 'MasyarakatController@lihat');
 });
+
+Route::get('/public/laporan/{filename}', [GetImageController::class, 'displayImage'])->name('image.displayImage');
 
 
 

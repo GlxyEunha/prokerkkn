@@ -42,7 +42,7 @@ Data Pengaduan
                 <div class="flex items-center justify-center text-sm">
                   <!-- Avatar with inset shadow -->
                   <div class="relative hidden mr-3 md:block">
-                    <img class="h-32 w-35" src="{{ Storage::url($item->image) }}" alt="" loading="lazy" />
+                    <img class="h-32 w-35" src="{{ route('image.displayImage' , $item->image) }}" alt="" loading="lazy" />
                   </div>
                 </div>
               </td>

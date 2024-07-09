@@ -39,7 +39,7 @@ Data Pengaduan
               <td class="px-4 py-3">
                 <div class="flex items-center text-sm">
                   <div class="relative hidden mr-3 md:block">
-                    <img class="h-32 w-35" src="{{ Storage::url($item->image) }}" alt="" loading="lazy" />
+                    <img class="h-32 w-35" src="{{ route('image.displayImage' , $item->image) }}" alt="" loading="lazy" />
                   </div>
                 </div>
               </td>
